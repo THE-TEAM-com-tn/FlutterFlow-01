@@ -108,107 +108,102 @@ Locale createLocale(String language) => language.contains('_')
 final kTranslationsMap = <Map<String, Map<String, String>>>[
   // LoginPage
   {
-    '7x7uot23': {
-      'en': 'Temporary : Back Button',
-      'ar': 'مؤقت: الصفحة الرئيسية للمسؤول',
-      'fr': 'Temporaire : Page d\'accueil de l\'administrateur',
-    },
     'z1uvpeps': {
       'en': 'Back to home',
       'ar': 'العودة إلى المنزل',
       'fr': 'De retour à la maison',
     },
-    'pl4vl4ad': {
+    'kimnzqyq': {
       'en': 'Login into your account',
       'ar': 'تسجيل الدخول إلى حسابك',
       'fr': 'Connectez-vous à votre compte',
     },
-    'jc9cfskq': {
+    '28fyes4y': {
       'en': 'Welcome back! Please login to your account',
       'ar': 'مرحبًا بعودتك! يرجى تسجيل الدخول إلى حسابك',
       'fr': 'Content de te revoir! Veuillez vous connecter à votre compte',
     },
-    '0m0m818k': {
+    '0s54qkg6': {
       'en': 'Email',
       'ar': 'بريد إلكتروني',
       'fr': 'E-mail',
     },
-    '7c34azaw': {
+    '8ygek6dx': {
       'en': '',
       'ar': 'بريد إلكتروني',
       'fr': 'E-mail',
     },
-    'tppte1l9': {
+    'h0x19a4h': {
       'en': 'Enter your email',
       'ar': 'أدخل بريدك الإلكتروني',
       'fr': 'Entrer votre Email',
     },
-    '3r6df3ot': {
+    'ko3oxwek': {
       'en': 'Password',
       'ar': 'كلمة المرور',
       'fr': 'Mot de passe',
     },
-    'zc38cvr8': {
+    'sr6bvehr': {
       'en': '',
       'ar': 'كلمة المرور',
       'fr': 'Mot de passe',
     },
-    'lenwgt5x': {
+    'cjfleytj': {
       'en': '••••••••',
       'ar': '••••••••',
       'fr': '••••••••',
     },
-    '96xbaehj': {
+    'xdrnifwk': {
       'en': 'Email is required.',
       'ar': 'البريد الالكتروني مطلوب.',
       'fr': 'Un e-mail est requis.',
     },
-    'a0ncb71a': {
+    'g4nnpa6p': {
       'en': 'Please choose an option from the dropdown',
       'ar': 'يرجى اختيار خيار من القائمة المنسدلة',
       'fr': 'Veuillez choisir une option dans la liste déroulante',
     },
-    'vv5asmie': {
+    '0gdppg2s': {
       'en': 'Password is required.',
       'ar': 'كلمة المرور مطلوبة.',
       'fr': 'Mot de passe requis.',
     },
-    'vczx9d7b': {
+    'w764y7yv': {
       'en': 'Please choose an option from the dropdown',
       'ar': 'يرجى اختيار خيار من القائمة المنسدلة',
       'fr': 'Veuillez choisir une option dans la liste déroulante',
     },
-    '6h3umznn': {
+    'tqaajmpv': {
       'en': 'Remember me',
       'ar': 'تذكرنى',
       'fr': 'Souviens-toi de moi',
     },
-    'yk7auu9u': {
+    'zv00igl1': {
       'en': 'Forget password?',
       'ar': 'هل نسيت كلمة المرور؟',
       'fr': 'Mot de passe oublié?',
     },
-    'x82bdl3g': {
+    'ye8hbult': {
       'en': 'Log in',
       'ar': 'تسجيل الدخول',
       'fr': 'Se connecter',
     },
-    'u9x2vi1y': {
+    'odyt0csk': {
       'en': 'or Sign up with',
       'ar': 'أو قم بالتسجيل باستخدام',
       'fr': 'ou Inscrivez-vous avec',
     },
-    'dwgxqevs': {
+    'w51qdvjs': {
       'en': 'Google',
       'ar': 'جوجل',
       'fr': 'Google',
     },
-    'uiy5i381': {
+    'gw95xy1p': {
       'en': 'Not Registered yet ?  ',
       'ar': 'لم يتم تسجيلة بعد ؟',
       'fr': 'Pas encore inscrit ?',
     },
-    'bop1gepy': {
+    'ifvhrz94': {
       'en': 'Create an account',
       'ar': 'إنشاء حساب',
       'fr': 'Créer un compte',
@@ -219,7 +214,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'fr': 'Maison',
     },
   },
-  // to_be_deleted01Copy
+  // to_be_deleted_01
   {
     'g9aqmnxl': {
       'en': 'Works : ',
@@ -234,12 +229,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   },
   // SignupPage
   {
-    '4xiwhyww': {
-      'en': 'Temporary : Admin Home Page',
-      'ar': 'مؤقت: الصفحة الرئيسية للمسؤول',
-      'fr': 'Temporaire : Page d\'accueil de l\'administrateur',
-    },
-    'exctytkz': {
+    'ua2spu11': {
       'en': 'Back to home',
       'ar': 'العودة إلى المنزل',
       'fr': 'De retour à la maison',
@@ -377,12 +367,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   },
   // ForgetPasswordPage
   {
-    'p267nryn': {
-      'en': 'Temporary : Admin Home Page',
-      'ar': 'مؤقت: الصفحة الرئيسية للمسؤول',
-      'fr': 'Temporaire : Page d\'accueil de l\'administrateur',
-    },
-    'o63fv5c9': {
+    'y6d0r2nn': {
       'en': 'Back to home',
       'ar': 'العودة إلى المنزل',
       'fr': 'De retour à la maison',

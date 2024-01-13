@@ -2,25 +2,25 @@ import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:provider/provider.dart';
-import 'to_be_deleted01_copy_model.dart';
-export 'to_be_deleted01_copy_model.dart';
+import 'to_be_deleted01_model.dart';
+export 'to_be_deleted01_model.dart';
 
-class ToBeDeleted01CopyWidget extends StatefulWidget {
-  const ToBeDeleted01CopyWidget({super.key});
+class ToBeDeleted01Widget extends StatefulWidget {
+  const ToBeDeleted01Widget({super.key});
 
   @override
-  _ToBeDeleted01CopyWidgetState createState() =>
-      _ToBeDeleted01CopyWidgetState();
+  _ToBeDeleted01WidgetState createState() => _ToBeDeleted01WidgetState();
 }
 
-class _ToBeDeleted01CopyWidgetState extends State<ToBeDeleted01CopyWidget>
+class _ToBeDeleted01WidgetState extends State<ToBeDeleted01Widget>
     with TickerProviderStateMixin {
-  late ToBeDeleted01CopyModel _model;
+  late ToBeDeleted01Model _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
@@ -43,7 +43,7 @@ class _ToBeDeleted01CopyWidgetState extends State<ToBeDeleted01CopyWidget>
   @override
   void initState() {
     super.initState();
-    _model = createModel(context, () => ToBeDeleted01CopyModel());
+    _model = createModel(context, () => ToBeDeleted01Model());
 
     setupAnimations(
       animationsMap.values.where((anim) =>
@@ -82,6 +82,85 @@ class _ToBeDeleted01CopyWidgetState extends State<ToBeDeleted01CopyWidget>
       child: Scaffold(
         key: scaffoldKey,
         backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
+        floatingActionButton: FloatingActionButton(
+          onPressed: () {
+            print('FloatingActionButton pressed ...');
+          },
+          backgroundColor: FlutterFlowTheme.of(context).primary,
+          elevation: 8.0,
+          child: InkWell(
+            splashColor: Colors.transparent,
+            focusColor: Colors.transparent,
+            hoverColor: Colors.transparent,
+            highlightColor: Colors.transparent,
+            onTap: () async {
+              if ((Theme.of(context).brightness == Brightness.light) == true) {
+                setDarkModeSetting(context, ThemeMode.dark);
+                unawaited(
+                  () async {}(),
+                );
+              } else {
+                setDarkModeSetting(context, ThemeMode.light);
+                unawaited(
+                  () async {}(),
+                );
+              }
+            },
+            child: Container(
+              width: double.infinity,
+              height: double.infinity,
+              decoration: const BoxDecoration(
+                gradient: LinearGradient(
+                  colors: [
+                    Color(0xFF095542),
+                    Color(0xB40C6E55),
+                    Color(0xFF92D1C1)
+                  ],
+                  stops: [0.0, 0.0, 1.0],
+                  begin: AlignmentDirectional(0.0, 1.0),
+                  end: AlignmentDirectional(0, -1.0),
+                ),
+                shape: BoxShape.circle,
+              ),
+              child: Row(
+                mainAxisSize: MainAxisSize.min,
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  if (Theme.of(context).brightness == Brightness.light)
+                    InkWell(
+                      splashColor: Colors.transparent,
+                      focusColor: Colors.transparent,
+                      hoverColor: Colors.transparent,
+                      highlightColor: Colors.transparent,
+                      onTap: () async {
+                        setDarkModeSetting(context, ThemeMode.dark);
+                      },
+                      child: Icon(
+                        Icons.wb_sunny_rounded,
+                        color: FlutterFlowTheme.of(context).info,
+                        size: 40.0,
+                      ),
+                    ),
+                  if (Theme.of(context).brightness == Brightness.dark)
+                    InkWell(
+                      splashColor: Colors.transparent,
+                      focusColor: Colors.transparent,
+                      hoverColor: Colors.transparent,
+                      highlightColor: Colors.transparent,
+                      onTap: () async {
+                        setDarkModeSetting(context, ThemeMode.light);
+                      },
+                      child: Icon(
+                        Icons.dark_mode,
+                        color: FlutterFlowTheme.of(context).info,
+                        size: 40.0,
+                      ),
+                    ),
+                ],
+              ),
+            ),
+          ),
+        ),
         body: SafeArea(
           top: true,
           child: Row(

@@ -62,9 +62,9 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           builder: (context, params) => const LoginPageWidget(),
         ),
         FFRoute(
-          name: 'to_be_deleted01Copy',
-          path: '/toBeDeleted01Copy',
-          builder: (context, params) => const ToBeDeleted01CopyWidget(),
+          name: 'to_be_deleted_01',
+          path: '/toBeDeleted01',
+          builder: (context, params) => const ToBeDeleted01Widget(),
         ),
         FFRoute(
           name: 'SignupPage',
