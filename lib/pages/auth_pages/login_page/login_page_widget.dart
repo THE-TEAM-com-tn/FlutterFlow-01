@@ -3,6 +3,7 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'dart:async';
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -261,11 +262,9 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                       40.0, 0.0, 40.0, 0.0),
                                   child: Container(
                                     width: 500.0,
-                                    height:
-                                        MediaQuery.sizeOf(context).height * 1.0,
                                     decoration: const BoxDecoration(),
                                     child: Column(
-                                      mainAxisSize: MainAxisSize.max,
+                                      mainAxisSize: MainAxisSize.min,
                                       mainAxisAlignment:
                                           MainAxisAlignment.start,
                                       crossAxisAlignment:
@@ -948,32 +947,27 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                                         ),
                                                       ),
                                                     ),
-                                                    Align(
+                                                    Container(
+                                                      width: 127.0,
+                                                      height: 32.0,
+                                                      decoration: BoxDecoration(
+                                                        color: FlutterFlowTheme
+                                                                .of(context)
+                                                            .primaryBackground,
+                                                      ),
                                                       alignment:
                                                           const AlignmentDirectional(
                                                               0.0, 0.0),
-                                                      child: Container(
-                                                        width: 127.0,
-                                                        height: 32.0,
-                                                        decoration:
-                                                            BoxDecoration(
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .primaryBackground,
+                                                      child: AutoSizeText(
+                                                        FFLocalizations.of(
+                                                                context)
+                                                            .getText(
+                                                          'odyt0csk' /* or Sign up with */,
                                                         ),
-                                                        alignment:
-                                                            const AlignmentDirectional(
-                                                                0.0, 0.0),
-                                                        child: Text(
-                                                          FFLocalizations.of(
-                                                                  context)
-                                                              .getText(
-                                                            'odyt0csk' /* or Sign up with */,
-                                                          ),
-                                                          style: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .labelLarge,
-                                                        ),
+                                                        style:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .labelLarge,
                                                       ),
                                                     ),
                                                   ],
