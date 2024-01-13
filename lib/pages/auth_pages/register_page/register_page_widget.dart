@@ -1403,7 +1403,10 @@ class _RegisterPageWidgetState extends State<RegisterPageWidget> {
                                                           Colors.transparent,
                                                       highlightColor:
                                                           Colors.transparent,
-                                                      onTap: () async {},
+                                                      onTap: () async {
+                                                        context.pushNamed(
+                                                            'LoginPage');
+                                                      },
                                                       child: Text(
                                                         FFLocalizations.of(
                                                                 context)

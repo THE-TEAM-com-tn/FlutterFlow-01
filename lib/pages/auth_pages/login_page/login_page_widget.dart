@@ -825,7 +825,10 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                                               .transparent,
                                                           highlightColor: Colors
                                                               .transparent,
-                                                          onTap: () async {},
+                                                          onTap: () async {
+                                                            context.pushNamed(
+                                                                'ForgetPasswordPage');
+                                                          },
                                                           child: Text(
                                                             FFLocalizations.of(
                                                                     context)
@@ -964,6 +967,8 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                                             .getText(
                                                           'odyt0csk' /* or Sign up with */,
                                                         ),
+                                                        textAlign:
+                                                            TextAlign.center,
                                                         style:
                                                             FlutterFlowTheme.of(
                                                                     context)
@@ -1116,7 +1121,10 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                                         Colors.transparent,
                                                     highlightColor:
                                                         Colors.transparent,
-                                                    onTap: () async {},
+                                                    onTap: () async {
+                                                      context.pushNamed(
+                                                          'RegisterPage');
+                                                    },
                                                     child: Text(
                                                       FFLocalizations.of(
                                                               context)

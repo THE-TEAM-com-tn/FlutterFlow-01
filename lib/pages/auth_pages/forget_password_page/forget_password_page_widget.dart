@@ -1,8 +1,10 @@
 import '/flutter_flow/flutter_flow_icon_button.dart';
+import '/flutter_flow/flutter_flow_language_selector.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'dart:async';
+import 'package:aligned_tooltip/aligned_tooltip.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -601,6 +603,133 @@ class _ForgetPasswordPageWidgetState extends State<ForgetPasswordPageWidget> {
                                                     borderRadius:
                                                         BorderRadius.circular(
                                                             10.0),
+                                                  ),
+                                                ),
+
+                                                // Temporary : DELETE ME LATER ( in prod)
+                                                AlignedTooltip(
+                                                  content: Padding(
+                                                      padding:
+                                                          const EdgeInsets.all(4.0),
+                                                      child: Text(
+                                                        FFLocalizations.of(
+                                                                context)
+                                                            .getText(
+                                                          'cm059dgn' /* Bouton Temporaire pour tester ... */,
+                                                        ),
+                                                        style:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyLarge,
+                                                      )),
+                                                  offset: 4.0,
+                                                  preferredDirection:
+                                                      AxisDirection.down,
+                                                  borderRadius:
+                                                      BorderRadius.circular(
+                                                          8.0),
+                                                  backgroundColor:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .secondaryBackground,
+                                                  elevation: 4.0,
+                                                  tailBaseWidth: 24.0,
+                                                  tailLength: 12.0,
+                                                  waitDuration: const Duration(
+                                                      milliseconds: 100),
+                                                  showDuration: const Duration(
+                                                      milliseconds: 1500),
+                                                  triggerMode:
+                                                      TooltipTriggerMode.tap,
+                                                  child:
+                                                      // Temporary : DELETE ME LATER ( in prod)
+                                                      Padding(
+                                                    padding:
+                                                        const EdgeInsetsDirectional
+                                                            .fromSTEB(0.0, 30.0,
+                                                                0.0, 0.0),
+                                                    child: Row(
+                                                      mainAxisSize:
+                                                          MainAxisSize.max,
+                                                      mainAxisAlignment:
+                                                          MainAxisAlignment
+                                                              .center,
+                                                      children: [
+                                                        // Temporary : DELETE ME LATER ( in prod)
+                                                        Padding(
+                                                          padding:
+                                                              const EdgeInsetsDirectional
+                                                                  .fromSTEB(
+                                                                      0.0,
+                                                                      0.0,
+                                                                      20.0,
+                                                                      0.0),
+                                                          child: Text(
+                                                            FFLocalizations.of(
+                                                                    context)
+                                                                .getText(
+                                                              'r4m7hi88' /* Temporary Button to test Lang.... */,
+                                                            ),
+                                                            style: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .bodyMedium
+                                                                .override(
+                                                                  fontFamily: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMediumFamily,
+                                                                  fontSize:
+                                                                      12.0,
+                                                                  useGoogleFonts: GoogleFonts
+                                                                          .asMap()
+                                                                      .containsKey(
+                                                                          FlutterFlowTheme.of(context)
+                                                                              .bodyMediumFamily),
+                                                                ),
+                                                          ),
+                                                        ),
+
+                                                        // Temporary : DELETE ME LATER ( in prod)
+                                                        FlutterFlowLanguageSelector(
+                                                          width: 200.0,
+                                                          backgroundColor:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .secondaryText,
+                                                          borderColor: Colors
+                                                              .transparent,
+                                                          dropdownIconColor:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .primaryBackground,
+                                                          borderRadius: 8.0,
+                                                          textStyle: GoogleFonts
+                                                              .getFont(
+                                                            'Poppins',
+                                                            color: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .primaryText,
+                                                            fontWeight:
+                                                                FontWeight
+                                                                    .normal,
+                                                            fontSize: 13.0,
+                                                          ),
+                                                          hideFlags: false,
+                                                          flagSize: 24.0,
+                                                          flagTextGap: 8.0,
+                                                          currentLanguage:
+                                                              FFLocalizations.of(
+                                                                      context)
+                                                                  .languageCode,
+                                                          languages:
+                                                              FFLocalizations
+                                                                  .languages(),
+                                                          onChanged: (lang) =>
+                                                              setAppLanguage(
+                                                                  context,
+                                                                  lang),
+                                                        ),
+                                                      ],
+                                                    ),
                                                   ),
                                                 ),
                                               ].divide(const SizedBox(height: 40.0)),

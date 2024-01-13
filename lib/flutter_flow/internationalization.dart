@@ -422,6 +422,16 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ar': 'التحقق من الحساب',
       'fr': 'vérifier le compte',
     },
+    'r4m7hi88': {
+      'en': 'Temporary Button to test Lang. :',
+      'ar': 'زر مؤقت لاختبار لانج. :',
+      'fr': 'Bouton temporaire pour tester Lang. :',
+    },
+    'cm059dgn': {
+      'en': 'Bouton Temporaire pour tester le "Lang Changer"',
+      'ar': 'زر مؤقت لاختبار "Lang Changer"',
+      'fr': 'Bouton Temporaire pour tester le "Lang Changer"',
+    },
     'mc855yvb': {
       'en': 'Home',
       'ar': 'بيت',
