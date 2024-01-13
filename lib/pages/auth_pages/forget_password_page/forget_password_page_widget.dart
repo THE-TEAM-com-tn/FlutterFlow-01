@@ -73,76 +73,89 @@ class _ForgetPasswordPageWidgetState extends State<ForgetPasswordPageWidget> {
               },
               backgroundColor: FlutterFlowTheme.of(context).primary,
               elevation: 8.0,
-              child: InkWell(
-                splashColor: Colors.transparent,
-                focusColor: Colors.transparent,
-                hoverColor: Colors.transparent,
-                highlightColor: Colors.transparent,
-                onTap: () async {
-                  if ((Theme.of(context).brightness == Brightness.light) ==
-                      true) {
-                    setDarkModeSetting(context, ThemeMode.dark);
-                    unawaited(
-                      () async {}(),
-                    );
-                  } else {
-                    setDarkModeSetting(context, ThemeMode.light);
-                    unawaited(
-                      () async {}(),
-                    );
-                  }
-                },
-                child: Container(
-                  width: double.infinity,
-                  height: double.infinity,
-                  decoration: const BoxDecoration(
-                    gradient: LinearGradient(
-                      colors: [
-                        Color(0xFF095542),
-                        Color(0xB40C6E55),
-                        Color(0xFF92D1C1)
-                      ],
-                      stops: [0.0, 0.0, 1.0],
-                      begin: AlignmentDirectional(0.0, 1.0),
-                      end: AlignmentDirectional(0, -1.0),
+              child: Align(
+                alignment: const AlignmentDirectional(0.0, 0.0),
+                child: InkWell(
+                  splashColor: Colors.transparent,
+                  focusColor: Colors.transparent,
+                  hoverColor: Colors.transparent,
+                  highlightColor: Colors.transparent,
+                  onTap: () async {
+                    if ((Theme.of(context).brightness == Brightness.light) ==
+                        true) {
+                      setDarkModeSetting(context, ThemeMode.dark);
+                      unawaited(
+                        () async {}(),
+                      );
+                    } else {
+                      setDarkModeSetting(context, ThemeMode.light);
+                      unawaited(
+                        () async {}(),
+                      );
+                    }
+                  },
+                  child: Container(
+                    width: double.infinity,
+                    height: double.infinity,
+                    decoration: const BoxDecoration(
+                      gradient: LinearGradient(
+                        colors: [
+                          Color(0xFF095542),
+                          Color(0xB40C6E55),
+                          Color(0xFF92D1C1)
+                        ],
+                        stops: [0.0, 0.0, 1.0],
+                        begin: AlignmentDirectional(0.0, 1.0),
+                        end: AlignmentDirectional(0, -1.0),
+                      ),
+                      shape: BoxShape.circle,
                     ),
-                    shape: BoxShape.circle,
-                  ),
-                  child: Row(
-                    mainAxisSize: MainAxisSize.min,
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      if (Theme.of(context).brightness == Brightness.light)
-                        InkWell(
-                          splashColor: Colors.transparent,
-                          focusColor: Colors.transparent,
-                          hoverColor: Colors.transparent,
-                          highlightColor: Colors.transparent,
-                          onTap: () async {
-                            setDarkModeSetting(context, ThemeMode.dark);
-                          },
-                          child: Icon(
-                            Icons.wb_sunny_rounded,
-                            color: FlutterFlowTheme.of(context).info,
-                            size: 40.0,
-                          ),
-                        ),
-                      if (Theme.of(context).brightness == Brightness.dark)
-                        InkWell(
-                          splashColor: Colors.transparent,
-                          focusColor: Colors.transparent,
-                          hoverColor: Colors.transparent,
-                          highlightColor: Colors.transparent,
-                          onTap: () async {
-                            setDarkModeSetting(context, ThemeMode.light);
-                          },
-                          child: Icon(
-                            Icons.dark_mode,
-                            color: FlutterFlowTheme.of(context).info,
-                            size: 40.0,
-                          ),
-                        ),
-                    ],
+                    alignment: const AlignmentDirectional(0.0, 0.0),
+                    child: Align(
+                      alignment: const AlignmentDirectional(0.0, 0.0),
+                      child: Row(
+                        mainAxisSize: MainAxisSize.min,
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          if (Theme.of(context).brightness == Brightness.light)
+                            Align(
+                              alignment: const AlignmentDirectional(0.0, 0.0),
+                              child: InkWell(
+                                splashColor: Colors.transparent,
+                                focusColor: Colors.transparent,
+                                hoverColor: Colors.transparent,
+                                highlightColor: Colors.transparent,
+                                onTap: () async {
+                                  setDarkModeSetting(context, ThemeMode.dark);
+                                },
+                                child: Icon(
+                                  Icons.wb_sunny_rounded,
+                                  color: FlutterFlowTheme.of(context).info,
+                                  size: 40.0,
+                                ),
+                              ),
+                            ),
+                          if (Theme.of(context).brightness == Brightness.dark)
+                            Align(
+                              alignment: const AlignmentDirectional(0.0, 0.0),
+                              child: InkWell(
+                                splashColor: Colors.transparent,
+                                focusColor: Colors.transparent,
+                                hoverColor: Colors.transparent,
+                                highlightColor: Colors.transparent,
+                                onTap: () async {
+                                  setDarkModeSetting(context, ThemeMode.light);
+                                },
+                                child: Icon(
+                                  Icons.dark_mode,
+                                  color: FlutterFlowTheme.of(context).info,
+                                  size: 50.0,
+                                ),
+                              ),
+                            ),
+                        ],
+                      ),
+                    ),
                   ),
                 ),
               ),
@@ -648,12 +661,22 @@ class _ForgetPasswordPageWidgetState extends State<ForgetPasswordPageWidget> {
                                                         const EdgeInsetsDirectional
                                                             .fromSTEB(0.0, 30.0,
                                                                 0.0, 0.0),
-                                                    child: Row(
-                                                      mainAxisSize:
-                                                          MainAxisSize.max,
-                                                      mainAxisAlignment:
-                                                          MainAxisAlignment
-                                                              .center,
+                                                    child: Wrap(
+                                                      spacing: 10.0,
+                                                      runSpacing: 0.0,
+                                                      alignment:
+                                                          WrapAlignment.start,
+                                                      crossAxisAlignment:
+                                                          WrapCrossAlignment
+                                                              .start,
+                                                      direction:
+                                                          Axis.horizontal,
+                                                      runAlignment:
+                                                          WrapAlignment.start,
+                                                      verticalDirection:
+                                                          VerticalDirection
+                                                              .down,
+                                                      clipBehavior: Clip.none,
                                                       children: [
                                                         // Temporary : DELETE ME LATER ( in prod)
                                                         Padding(
@@ -663,7 +686,7 @@ class _ForgetPasswordPageWidgetState extends State<ForgetPasswordPageWidget> {
                                                                       0.0,
                                                                       0.0,
                                                                       20.0,
-                                                                      0.0),
+                                                                      10.0),
                                                           child: Text(
                                                             FFLocalizations.of(
                                                                     context)
