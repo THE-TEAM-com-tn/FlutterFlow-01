@@ -55,27 +55,29 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
                   ),
                 )
               : const LoginPageWidget(),
+          routes: [
+            FFRoute(
+              name: 'LoginPage',
+              path: 'LoginPage',
+              builder: (context, params) => const LoginPageWidget(),
+            ),
+            FFRoute(
+              name: 'to_be_deleted_01',
+              path: 'toBeDeleted01',
+              builder: (context, params) => const ToBeDeleted01Widget(),
+            ),
+            FFRoute(
+              name: 'RegisterPage',
+              path: 'RegisterPage',
+              builder: (context, params) => const RegisterPageWidget(),
+            ),
+            FFRoute(
+              name: 'ForgetPasswordPage',
+              path: 'ForgetPasswordPage',
+              builder: (context, params) => const ForgetPasswordPageWidget(),
+            )
+          ].map((r) => r.toRoute(appStateNotifier)).toList(),
         ),
-        FFRoute(
-          name: 'LoginPage',
-          path: '/LoginPage',
-          builder: (context, params) => const LoginPageWidget(),
-        ),
-        FFRoute(
-          name: 'to_be_deleted_01',
-          path: '/toBeDeleted01',
-          builder: (context, params) => const ToBeDeleted01Widget(),
-        ),
-        FFRoute(
-          name: 'RegisterPage',
-          path: '/RegisterPage',
-          builder: (context, params) => const RegisterPageWidget(),
-        ),
-        FFRoute(
-          name: 'ForgetPasswordPage',
-          path: '/ForgetPasswordPage',
-          builder: (context, params) => const ForgetPasswordPageWidget(),
-        )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );
 

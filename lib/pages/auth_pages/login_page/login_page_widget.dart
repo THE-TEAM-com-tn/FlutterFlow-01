@@ -729,7 +729,7 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                         Padding(
                                           padding:
                                               const EdgeInsetsDirectional.fromSTEB(
-                                                  0.0, 40.0, 0.0, 0.0),
+                                                  0.0, 40.0, 0.0, 10.0),
                                           child: Column(
                                             mainAxisSize: MainAxisSize.max,
                                             children: [
@@ -1150,6 +1150,21 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                             ].divide(const SizedBox(height: 40.0)),
                                           ),
                                         ),
+                                        if (responsiveVisibility(
+                                          context: context,
+                                          phone: false,
+                                        ))
+                                          Align(
+                                            alignment:
+                                                const AlignmentDirectional(0.0, 0.0),
+                                            child: Container(
+                                              width: double.infinity,
+                                              height: MediaQuery.sizeOf(context)
+                                                      .height *
+                                                  0.04,
+                                              decoration: const BoxDecoration(),
+                                            ),
+                                          ),
                                       ],
                                     ),
                                   ),
