@@ -218,8 +218,8 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   {
     'g9aqmnxl': {
       'en': 'Works : ',
-      'ar': '',
-      'fr': '',
+      'ar': 'يعمل :',
+      'fr': 'Travaux :',
     },
     '6z5kgnld': {
       'en': 'Home',
@@ -227,7 +227,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'fr': 'Maison',
     },
   },
-  // SignupPage
+  // RegisterPage
   {
     'ua2spu11': {
       'en': 'Back to home',

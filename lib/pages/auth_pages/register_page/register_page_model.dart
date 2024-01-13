@@ -1,8 +1,8 @@
 import '/flutter_flow/flutter_flow_util.dart';
-import 'signup_page_widget.dart' show SignupPageWidget;
+import 'register_page_widget.dart' show RegisterPageWidget;
 import 'package:flutter/material.dart';
 
-class SignupPageModel extends FlutterFlowModel<SignupPageWidget> {
+class RegisterPageModel extends FlutterFlowModel<RegisterPageWidget> {
   ///  State fields for stateful widgets in this page.
 
   final unfocusNode = FocusNode();

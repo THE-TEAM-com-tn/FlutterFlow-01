@@ -39,7 +39,7 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
                 ),
               ),
             )
-          : const SignupPageWidget(),
+          : const LoginPageWidget(),
       routes: [
         FFRoute(
           name: '_initialize',
@@ -54,7 +54,7 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
                     ),
                   ),
                 )
-              : const SignupPageWidget(),
+              : const LoginPageWidget(),
         ),
         FFRoute(
           name: 'LoginPage',
@@ -67,9 +67,9 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           builder: (context, params) => const ToBeDeleted01Widget(),
         ),
         FFRoute(
-          name: 'SignupPage',
-          path: '/SignupPage',
-          builder: (context, params) => const SignupPageWidget(),
+          name: 'RegisterPage',
+          path: '/RegisterPage',
+          builder: (context, params) => const RegisterPageWidget(),
         ),
         FFRoute(
           name: 'ForgetPasswordPage',
