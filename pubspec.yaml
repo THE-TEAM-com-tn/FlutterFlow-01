@@ -25,6 +25,9 @@ dependencies:
     sdk: flutter
   flutter_localizations:
     sdk: flutter
+
+  http: ^1.1.0
+  firebase_core: ^2.24.2
   aligned_tooltip: 0.0.1
   auto_size_text: 3.0.0
   cached_network_image: 3.2.1
@@ -72,6 +75,10 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
 
+dependency_overrides:
+  provider:
+  intl: ^0.18.0
+  google_fonts:
 
 flutter_launcher_icons:
   android: true

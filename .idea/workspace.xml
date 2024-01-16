@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="NONE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="5a43d766-8dee-456e-9313-af9e7296cfa0" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/lib/api/AuthApi.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/api/ConnectedScreen.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/api/loginResponse.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/components/side_nav22/side_nav22_model.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/components/side_nav22/side_nav22_widget.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/components/to_be_deleted_01/to_be_deleted01_model.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/components/to_be_deleted_01/to_be_deleted01_widget.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/flutter_flow/form_field_controller.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/flutter_flow/form_field_controller.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/flutter_flow/nav/nav.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/flutter_flow/nav/nav.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/index.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/index.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/main.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/pages/auth_pages/forget_password_page/forget_password_page_model.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/pages/auth_pages/forget_password_page/forget_password_page_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/auth_pages/forget_password_page/forget_password_page_widget.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/pages/auth_pages/login_page/login_page_model.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/pages/auth_pages/login_page/login_page_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/auth_pages/login_page/login_page_widget.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/pages/auth_pages/register_page/register_page_model.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/pages/auth_pages/register_page/register_page_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/auth_pages/register_page/register_page_widget.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/index.html" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ClangdSettings">
+    <option name="formatViaClangd" value="false" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2atp9lTN8ybIUvqL4Aab4xFxtZS" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.cidr.known.project.marker": "true",
+    "cf.first.check.clang-format": "false",
+    "cidr.known.project.marker": "true",
+    "dart.analysis.tool.window.visible": "false",
+    "io.flutter.reload.alreadyRun": "true",
+    "last_opened_file_path": "C:/Users/medam/Documents/Github/laravel/FlutterFlow-01/lib/api",
+    "settings.editor.selected.configurable": "dart.settings",
+    "show.migrate.to.gradle.popup": "false"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\medam\Documents\Github\laravel\FlutterFlow-01\lib\api" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="main.dart" type="FlutterRunConfigurationType" factoryName="Flutter">
+      <option name="additionalArgs" value="-d chrome --web-hostname localhost --web-port 5000 --web-renderer html" />
+      <option name="filePath" value="$PROJECT_DIR$/lib/main.dart" />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="5a43d766-8dee-456e-9313-af9e7296cfa0" name="Changes" comment="" />
+      <created>1705147582182</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1705147582182</updated>
+    </task>
+    <servers />
+  </component>
+</project>

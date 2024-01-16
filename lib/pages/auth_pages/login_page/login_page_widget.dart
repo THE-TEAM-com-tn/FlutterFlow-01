@@ -1,3 +1,5 @@
+import '../../../api/AuthApi.dart';
+import '../../../api/ConnectedScreen.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
@@ -9,8 +11,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
-import 'login_page_model.dart';
-export 'login_page_model.dart';
+
 
 class LoginPageWidget extends StatefulWidget {
   const LoginPageWidget({super.key});
@@ -19,42 +20,92 @@ class LoginPageWidget extends StatefulWidget {
   _LoginPageWidgetState createState() => _LoginPageWidgetState();
 }
 
+
+
 class _LoginPageWidgetState extends State<LoginPageWidget> {
-  late LoginPageModel _model;
+ // late LoginPageModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
+
+  final unfocusNode = FocusNode();
+  final formKey = GlobalKey<FormState>();
+  // State field(s) for EmailAddressField widget.
+  FocusNode? emailAddressFieldFocusNode;
+  TextEditingController? emailAddressFieldController;
+  String? Function(BuildContext, String?)? emailAddressFieldControllerValidator;
+  // State field(s) for PasswordField widget.
+  FocusNode? passwordFieldFocusNode;
+  TextEditingController? passwordFieldController;
+  late bool passwordFieldVisibility;
+  String? Function(BuildContext, String?)? passwordFieldControllerValidator;
+  // State field(s) for Checkbox widget.
+  bool? checkboxValue;
+  
+  
 
   @override
   void initState() {
     super.initState();
-    _model = createModel(context, () => LoginPageModel());
+    //_model = createModel(context, () => LoginPageModel());
 
-    _model.emailAddressFieldController ??= TextEditingController();
-    _model.emailAddressFieldFocusNode ??= FocusNode();
-
-    _model.passwordFieldController ??= TextEditingController();
-    _model.passwordFieldFocusNode ??= FocusNode();
+    passwordFieldVisibility = false;
+    emailAddressFieldController ??= TextEditingController();
+    emailAddressFieldFocusNode ??= FocusNode();
+    passwordFieldController ??= TextEditingController();
+    passwordFieldFocusNode ??= FocusNode();
 
     WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 
   @override
   void dispose() {
-    _model.dispose();
+    //dispose();
+    unfocusNode.dispose();
+    emailAddressFieldFocusNode?.dispose();
+    emailAddressFieldController?.dispose();
 
+    passwordFieldFocusNode?.dispose();
+    passwordFieldController?.dispose();
     super.dispose();
   }
 
+
+
+
+
+  ////////////////
+
+
+  bool _isLoading = false;
+  void _login() async {
+
+    setState(() {
+      _isLoading = true;
+    });
+    // Call your AuthApi login method
+
+    var response = await AuthApi().login(
+      email: emailAddressFieldController.text,
+      password: passwordFieldController.text,
+    );
+
+    setState(() {
+      _isLoading = false;
+    });
+    if (response.statusCode == 200) {
+      // Navigate to another screen on successful login
+      Navigator.of(context).push(MaterialPageRoute(builder: (context) => ConnectedScreen()));
+    } else {
+      // Show error message
+      ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(response.message)));
+    }
+  }
+
+  ///////////////////
+
   @override
   Widget build(BuildContext context) {
-    if (isiOS) {
-      SystemChrome.setSystemUIOverlayStyle(
-        SystemUiOverlayStyle(
-          statusBarBrightness: Theme.of(context).brightness,
-          systemStatusBarContrastEnforced: true,
-        ),
-      );
-    }
+
 
     context.watch<FFAppState>();
 
@@ -62,8 +113,8 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
         title: 'LoginPage',
         color: FlutterFlowTheme.of(context).primary.withAlpha(0XFF),
         child: GestureDetector(
-          onTap: () => _model.unfocusNode.canRequestFocus
-              ? FocusScope.of(context).requestFocus(_model.unfocusNode)
+          onTap: () =>  unfocusNode.canRequestFocus
+              ? FocusScope.of(context).requestFocus(unfocusNode)
               : FocusScope.of(context).unfocus(),
           child: Scaffold(
             key: scaffoldKey,
@@ -148,11 +199,16 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                 ),
               ),
             ),
+
+
             body: SafeArea(
               top: true,
+
+
               child: Row(
                 mainAxisSize: MainAxisSize.max,
                 children: [
+
                   Expanded(
                     child: Container(
                       decoration: BoxDecoration(
@@ -164,7 +220,7 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                           child: Column(
                             mainAxisSize: MainAxisSize.max,
                             mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
+                            children: <Widget>[
                               if (responsiveVisibility(
                                 context: context,
                                 phone: false,
@@ -342,7 +398,7 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                               const EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 32.0, 0.0, 0.0),
                                           child: Form(
-                                            key: _model.formKey,
+                                            key: formKey,
                                             autovalidateMode:
                                                 AutovalidateMode.disabled,
                                             child: Column(
@@ -377,10 +433,8 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                                               ),
                                                     ),
                                                     TextFormField(
-                                                      controller: _model
-                                                          .emailAddressFieldController,
-                                                      focusNode: _model
-                                                          .emailAddressFieldFocusNode,
+                                                      controller:emailAddressFieldController,
+                                                      focusNode: emailAddressFieldFocusNode,
                                                       obscureText: false,
                                                       decoration:
                                                           InputDecoration(
@@ -515,8 +569,7 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                                       keyboardType:
                                                           TextInputType
                                                               .emailAddress,
-                                                      validator: _model
-                                                          .emailAddressFieldControllerValidator
+                                                      validator: emailAddressFieldControllerValidator
                                                           .asValidator(context),
                                                     ),
                                                   ].divide(
@@ -554,12 +607,9 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                                                 ),
                                                       ),
                                                       TextFormField(
-                                                        controller: _model
-                                                            .passwordFieldController,
-                                                        focusNode: _model
-                                                            .passwordFieldFocusNode,
-                                                        obscureText: !_model
-                                                            .passwordFieldVisibility,
+                                                        controller: passwordFieldController,
+                                                        focusNode: passwordFieldFocusNode,
+                                                        obscureText: !passwordFieldVisibility,
                                                         decoration:
                                                             InputDecoration(
                                                           labelStyle:
@@ -671,16 +721,14 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                                           suffixIcon: InkWell(
                                                             onTap: () =>
                                                                 setState(
-                                                              () => _model
-                                                                      .passwordFieldVisibility =
-                                                                  !_model
-                                                                      .passwordFieldVisibility,
+                                                              () => passwordFieldVisibility =
+                                                                  !passwordFieldVisibility,
                                                             ),
                                                             focusNode: FocusNode(
                                                                 skipTraversal:
                                                                     true),
                                                             child: Icon(
-                                                              _model.passwordFieldVisibility
+                                                              passwordFieldVisibility
                                                                   ? Icons
                                                                       .visibility_outlined
                                                                   : Icons
@@ -713,8 +761,7 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                                                   lineHeight:
                                                                       1.5,
                                                                 ),
-                                                        validator: _model
-                                                            .passwordFieldControllerValidator
+                                                        validator: passwordFieldControllerValidator
                                                             .asValidator(
                                                                 context),
                                                       ),
@@ -775,13 +822,11 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                                                 .secondaryText,
                                                       ),
                                                       child: Checkbox(
-                                                        value: _model
-                                                                .checkboxValue ??=
+                                                        value: checkboxValue ??=
                                                             true,
                                                         onChanged:
                                                             (newValue) async {
-                                                          setState(() => _model
-                                                                  .checkboxValue =
+                                                          setState(() => checkboxValue =
                                                               newValue!);
                                                         },
                                                         activeColor:
@@ -869,16 +914,19 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
 
                                               // amine button 2
                                               FFButtonWidget(
-                                                onPressed: () async {
-                                                  if (_model.formKey
+                                                onPressed: _login,//() //async {
+
+
+                                                  /*if (formKey
                                                               .currentState ==
                                                           null ||
-                                                      !_model
-                                                          .formKey.currentState!
+                                                      !formKey.currentState!
                                                           .validate()) {
                                                     return;
                                                   }
-                                                },
+                                                */
+
+                                                 // },
                                                 text:
                                                     FFLocalizations.of(context)
                                                         .getText(
@@ -1228,6 +1276,8 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                 ],
               ),
             ),
+
+
           ),
         ));
   }

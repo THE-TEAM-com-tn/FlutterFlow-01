@@ -10,8 +10,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
-import 'forget_password_page_model.dart';
-export 'forget_password_page_model.dart';
+
 
 class ForgetPasswordPageWidget extends StatefulWidget {
   const ForgetPasswordPageWidget({super.key});
@@ -22,24 +21,36 @@ class ForgetPasswordPageWidget extends StatefulWidget {
 }
 
 class _ForgetPasswordPageWidgetState extends State<ForgetPasswordPageWidget> {
-  late ForgetPasswordPageModel _model;
+  //late ForgetPasswordPageModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
+
+  final unfocusNode = FocusNode();
+  final formKey = GlobalKey<FormState>();
+  // State field(s) for EmailAddressField widget.
+  FocusNode? emailAddressFieldFocusNode;
+  TextEditingController? emailAddressFieldController;
+  String? Function(BuildContext, String?)? emailAddressFieldControllerValidator;
+
+
 
   @override
   void initState() {
     super.initState();
-    _model = createModel(context, () => ForgetPasswordPageModel());
 
-    _model.emailAddressFieldController ??= TextEditingController();
-    _model.emailAddressFieldFocusNode ??= FocusNode();
+    unfocusNode.dispose();
+    emailAddressFieldFocusNode?.dispose();
+    emailAddressFieldController?.dispose();
+
+    emailAddressFieldController ??= TextEditingController();
+    emailAddressFieldFocusNode ??= FocusNode();
 
     WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 
   @override
   void dispose() {
-    _model.dispose();
+    //_model.dispose();
 
     super.dispose();
   }
@@ -61,8 +72,8 @@ class _ForgetPasswordPageWidgetState extends State<ForgetPasswordPageWidget> {
         title: 'ForgetPasswordPage',
         color: FlutterFlowTheme.of(context).primary.withAlpha(0XFF),
         child: GestureDetector(
-          onTap: () => _model.unfocusNode.canRequestFocus
-              ? FocusScope.of(context).requestFocus(_model.unfocusNode)
+          onTap: () => unfocusNode.canRequestFocus
+              ? FocusScope.of(context).requestFocus(unfocusNode)
               : FocusScope.of(context).unfocus(),
           child: Scaffold(
             key: scaffoldKey,
@@ -362,7 +373,7 @@ class _ForgetPasswordPageWidgetState extends State<ForgetPasswordPageWidget> {
                                                 const EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 32.0, 0.0, 0.0),
                                             child: Form(
-                                              key: _model.formKey,
+                                              key: formKey,
                                               autovalidateMode:
                                                   AutovalidateMode.disabled,
                                               child: Column(
@@ -402,10 +413,8 @@ class _ForgetPasswordPageWidgetState extends State<ForgetPasswordPageWidget> {
                                                               ),
                                                         ),
                                                         TextFormField(
-                                                          controller: _model
-                                                              .emailAddressFieldController,
-                                                          focusNode: _model
-                                                              .emailAddressFieldFocusNode,
+                                                          controller: emailAddressFieldController,
+                                                          focusNode: emailAddressFieldFocusNode,
                                                           obscureText: false,
                                                           decoration:
                                                               InputDecoration(
@@ -537,8 +546,7 @@ class _ForgetPasswordPageWidgetState extends State<ForgetPasswordPageWidget> {
                                                           keyboardType:
                                                               TextInputType
                                                                   .emailAddress,
-                                                          validator: _model
-                                                              .emailAddressFieldControllerValidator
+                                                          validator: emailAddressFieldControllerValidator
                                                               .asValidator(
                                                                   context),
                                                         ),
@@ -561,10 +569,10 @@ class _ForgetPasswordPageWidgetState extends State<ForgetPasswordPageWidget> {
                                                 // amine button 2
                                                 FFButtonWidget(
                                                   onPressed: () async {
-                                                    if (_model.formKey
+                                                    if (formKey
                                                                 .currentState ==
                                                             null ||
-                                                        !_model.formKey
+                                                        !formKey
                                                             .currentState!
                                                             .validate()) {
                                                       return;
